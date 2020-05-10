@@ -2,21 +2,21 @@ import React from 'react'
 import {withRouteData} from 'react-static'
 import Markdown from "react-markdown";
 import { Link } from 'components/Router'
-
-export default withRouteData(({post}) => (
+ 
+export default withRouteData(({post}, props) => (
   <React.Fragment>
     <div className="content">
-      <Link to="/">{'<'} Back</Link>  
+      <Link to="/">{'<'} Back bro</Link>  
     </div>
     <article>
       <h1>{post.metadata.title}</h1>
-      <div>
+      {/* <div>
         <img
           alt={post.metadata.title}
           src={post.metadata.image.url}
         />
-      </div>
-      <Markdown source={post.metadata.content} />
+      </div> */}
+      <Markdown className='text-bounce' source={post.metadata.content} />
   </article>
   </React.Fragment>
 ))
